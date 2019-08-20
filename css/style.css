@@ -1,0 +1,30 @@
+.nav-wrapper {
+    background-color: #012D5A;
+}
+.iconehamburger {
+    margin-left: 10px;
+}
+div.maintxt>b {
+    font-size: 1.5em;
+}
+div.maintxt {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.page-footer {
+    margin-bottom: 0;
+    padding-bottom:0;
+    background-color: #012D5A;
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+.textcontact {
+    font-size: 1.5em;
+}
