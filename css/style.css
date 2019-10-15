@@ -39,3 +39,10 @@ main {
 .menuBtn:focus {     
     background-color: transparent;    
 }
+.drag-target {
+    height: 100%;
+    width: 0px;
+    position: fixed;
+    top: 0;
+    z-index: 998; 
+}
