@@ -65,3 +65,20 @@ p.lojatxtproduto{
 a.btnproduto{
     background-color: #012D5A;
 }
+.reparoitem{
+    border: 1px solid;
+    border-color: #012D5A;
+    border-radius: 10px;
+    background-color: #012D5A;
+}
+.iconeclientereparo{
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+.notacomprador{
+    color: white;
+    font-size: 12px;
+    border-left: 10px;
+    border-right: 10px;
+}
