@@ -46,3 +46,22 @@ main {
     top: 0;
     z-index: 998; 
 }
+i.turnback{
+    color: black;
+    font-size: 2em;
+    margin-left: 10px;
+    margin-top: 20px;
+    align-self: center;
+}
+h4{
+    margin-top: 15px
+}
+li.active>a{
+    background-color: #012D5A;
+}
+p.lojatxtproduto{
+    color:black;
+}
+a.btnproduto{
+    background-color: #012D5A;
+}
