@@ -92,3 +92,50 @@ a.btnproduto{
     padding-top: 0.5%;
     padding-bottom: 0.5%
 }
+header,
+main,
+footer {
+    padding-left: 200px;
+}
+.brand-logo>img {
+    display: none;
+}
+@media only screen and (max-width : 992px) {
+
+    header,
+    main,
+    footer {
+        padding-left: 0;
+    }
+    .brand-logo>img {
+        display: inline-block;
+    }
+}
+.sidenav {
+    width: 200px;
+    background-color: #012D5A;
+}
+ul.sidenav>li>div.row{
+    margin-top: 20px;
+}
+.select-dropdown {
+    color: white;
+}
+.searchbar {
+    padding-top: 3%;
+}
+.titleProd {
+    margin-bottom: 0.2%;
+}
+.catprod {
+    padding: 1% 1% 1% 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 90%;
+}
+h5.cathead {
+    margin-top: 3.1%;
+}
+div.cathead {
+    margin-bottom: 4%;
+}
