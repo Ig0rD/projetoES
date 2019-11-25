@@ -26,3 +26,6 @@ $(document).ready(function () {
     draggable: true,
   });
 });
+$('.carousel.carousel-slider').carousel({
+  indicators: true
+});

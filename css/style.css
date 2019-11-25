@@ -139,3 +139,20 @@ h5.cathead {
 div.cathead {
     margin-bottom: 4%;
 }
+.cont-reparos {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.nota-comprador {
+    font-size: 0.9em;
+}
+.produto-container,
+.det-reparo-container {
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+.div-review-comprador {
+    margin-top: 1%
+}
