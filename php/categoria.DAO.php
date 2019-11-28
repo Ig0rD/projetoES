@@ -1,5 +1,5 @@
 <?php
-    class ContaDAO {
+    class CategoriaDAO {
         private function getConexao() {
             $con = new PDO("pgsql:host=localhost;dbname=ProjetoPadel;port=5432",
             "postgres", "clinicapadel");
@@ -10,26 +10,26 @@
         public function listarCategorias ($cat){
             $catfill = "";
             $con = $this->getConexao();
-            for($i=0;i<count($cat);$i++){
+            for($i=0;$i<count($cat);$i++){
                 if($cat[0] == "todas") {
                     $catfill = "*" ;
                     break;
                 } else {
-                    if((i-1) == count($cat)){
+                    if(($i-1) == count($cat)){
                         $catfill += "?";
                     } else {
                         $catfill += "?,";
                     }
                 }
             }
-            $sql = 'SELECT ' + $catfill + 'FROM "Categoria"';
+            $sql = 'SELECT '.$catfill.' FROM "Categoria"';
             $stm = $con->prepare($sql);
 
-            for($i=1;i<=count($cat);$i++) {
+            for($i=1;$i<=count($cat);$i++) {
                 if($cat[0] == "todas") {
                     break;
                 } else {
-                    $stm->bindValue(i, $cat[i-1]);
+                    $stm->bindValue($i, $cat[$i-1]);
                 }            
             } 
             $res = $stm->execute();

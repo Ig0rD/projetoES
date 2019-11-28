@@ -6,7 +6,7 @@
             return $con;
         }
 
-        public function listarCategorias ($id){
+        public function listarItems ($id){
             $catfill = "";
             $con = $this->getConexao();
             $sql = 'SELECT * FROM "Item" WHERE "codCategoria" = ?';
@@ -16,7 +16,7 @@
             $items = array();
             if($res) {
                 while($linha = $stm->fetch(PDO::FETCH_ASSOC)) {
-                    $item = new Item($linha['foto'], $linha['codCategoria'], $linha['precoVenda'], $linha['nome'], $linha['codItem'], $linha['quantidadeDisponivel']);
+                    $item = new Item($linha['foto'], $linha['codCategoria'], $linha['precoVenda'], $linha['nome'], $linha['codItem'], $linha['quantidadeDisponivel'], $linha['descricao']);
                     array_push($items, $item);
                   }
             }
