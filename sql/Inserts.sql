@@ -8,7 +8,7 @@ INSERT INTO "Item" (foto , codcategoria , precovenda , nome , quantidadeDisponiv
     VALUES ('./imagens/clinicapadel.png', 1 , 2.6, 'Bola padel 3', 60, 'Uma bola muito legal e popular também também', 1);
 
 INSERT INTO "Item" (foto , codcategoria , precovenda , nome , quantidadeDisponivel , descricao, precocompra)
-    VALUES ('./imagens/raquete-de-padel-nox-stupa-luxury-full-carbon-l5-D_NQ_NP_689775-MLB29236035143_012019-Q.jpg', 2, 500, 'Raquete padel 1', 3, 'Uma raquete muito legal e popular', 1);
+    VALUES ('./imagens/raquete-de-padel-nox-stupa-luxury-full-carbon-l5-D_NQ_NP_689775-MLB29236035143_012019-Q.jpg', 2, 500, 'Raquete padel 1', 0, 'Uma raquete muito legal e popular', 1);
 INSERT INTO "Item" (foto , codcategoria , precovenda , nome , quantidadeDisponivel , descricao, precocompra)
     VALUES ('./imagens/raquete-de-padel-nox-stupa-luxury-full-carbon-l5-D_NQ_NP_689775-MLB29236035143_012019-Q.jpg', 2 , 350, 'Raquete padel 2', 5, 'Uma raquete muito legal e popular também', 1);
 INSERT INTO "Item" (foto , codcategoria , precovenda , nome , quantidadeDisponivel , descricao, precocompra)
