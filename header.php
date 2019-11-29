@@ -30,7 +30,7 @@
                     <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons ">menu</i></a>
                 </li>
                 <li class="right">
-                    <a href="login.html"><i class="material-icons">account_circle</i></a>
+                    <a href="login.php"><i class="material-icons">account_circle</i></a>
                 </li>
 
             </ul>

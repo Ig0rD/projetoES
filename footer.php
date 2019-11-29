@@ -7,13 +7,13 @@
         </li>
         <li>
             <ul class="collection">
-                <li class="collection-item blue darken-4"><a href="index.html"
+                <li class="collection-item blue darken-4"><a href="index.php"
                         class="menuOption grey-text text-lighten-3 waves-effect waves-light">Home</a>
                 </li>
-                <li class="collection-item blue darken-4"><a href="loja.html"
+                <li class="collection-item blue darken-4"><a href="loja.php"
                         class="menuOption grey-text text-lighten-3 waves-effect waves-light">Loja</a>
                 </li>
-                <li class="collection-item blue darken-4"><a href="reparo.html"
+                <li class="collection-item blue darken-4"><a href="reparo.php"
                         class="menuOption grey-text text-lighten-3 waves-effect waves-light">Reparos</a></li>
             </ul>
         </li>

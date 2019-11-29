@@ -6,19 +6,35 @@
     require_once('./php/item.DAO.php');
 
     $cDAO = new CategoriaDAO;
-    $iDAO = new ItemDAO;
+    $iDAO = new ItemDAO;;
+    $valores = array();
 
-    $listCategorias = $cDAO->listarCategorias(['todas']);
+    if (isset($_GET['searchprod']) == false) {
+        $listCategorias = $cDAO->listarCategorias(['todas']); 
+        $valores = ["todas"];       
+    } else {
+        foreach ($_GET['searchprod'] as $value) {
+            if($value !== "todas"){
+                array_push($valores, intval($value));          
+            } else {
+                array_push($valores, $value);
+            }
+
+        }
+        $listCategorias = $cDAO->listarCategorias($valores);
+    }
+
 ?>
   <main>
     <div class="searchbar row blue darken-4 valign-wrapper">
         <div class="input-field col s9 offset-s1 grey-text text-lighten-3">
-            <form action="./form.item.php" name="searchprod" method="get">
-                <select multiple>
-                    <option class="grey-text text-lighten-3" value="todas" selected>Todas</option>
-                    <?php foreach($listCategorias as $categoria) {?>
-                    <option class="grey-text text-lighten-3" value="<?php echo $categoria->getNome(); ?>" selected><?php echo $categoria->getNome(); ?></option>
-                    <?php } ?>
+            <form action="" method="get">
+                <select multiple  name="searchprod[]">
+                    <option class="grey-text text-lighten-3" value="todas" <?php if(in_array("todas", $valores)) {echo "selected";} ?>>Todas</option>
+                    <?php foreach($listCategorias as $categoria) {
+                        ?>
+                    <option class="grey-text text-lighten-3" value="<?php echo $categoria->getcodCategoria(); ?>" <?php if(in_array($categoria->getcodCategoria(), $valores)) {echo selected;} ?> ><?php echo $categoria->getNome(); ?></option>
+                    <?php }?>
                 </select>
                 <label class="grey-text text-lighten-3">Pesquisar Categorias</label>
                 </div>
@@ -28,25 +44,27 @@
             </form>
     </div>
     <?php foreach ($listCategorias as $categoria) {
-        $listItems = $iDAO->listarItems($categoria->getcodCategoria())    
+        $listItems = $iDAO->listarItems($categoria->getcodCategoria());  
+        if(in_array($categoria->getcodCategoria(), $valores) || in_array("todas", $valores)) {
     ?>
     <div class="row container catprod z-depth-1 blue darken-3">
         <div class="cathead col s12 valign-wrapper blue darken-4">
             <h5 class="cathead grey-text text-lighten-3"><?php echo $categoria->getNome(); ?></h6>
         </div>
+        <div class="row">        
         <?php foreach($listItems as $item) {?>
-        <div class="row">
             <div class="col s6 m4 l3">
                 <div class="center">
-                    <a href="produto.html"><img class="responsive-img" src="<?php echo $item->getFoto() ?>" alt="produto"></a>
+                    <a href="produto.php?coditem=<?php echo $item->getCodItem() ?>"><img class="responsive-img" src="<?php echo $item->getFoto() ?>" alt="produto"></a>
                 </div>
                 <div>
                     <p class="titleProd grey-text text-lighten-3 flow-text center-align"><b><?php echo $item->getNome() ?></b></p>
+                    <p class="titleProd grey-text text-lighten-3 flow-text center-align"><b>R$: <?php echo $item->getPrecoVenda() ?></b></p>
                     <p class="truncate grey-text text-lighten-3"><?php echo $item->getDescricao() ?></p>
                 </div>
             </div>
-        </div>
-        <?php } ?>
+        <?php }} ?>
+        </div>        
     </div>
     <?php } ?>
 </main>

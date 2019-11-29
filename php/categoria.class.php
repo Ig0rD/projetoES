@@ -16,5 +16,12 @@
         public function getcodCategoria () {
             return $this->codCategoria;
         }
+        public function getCategoriasSelecionadas($s) {
+            if (in_array($s, $this->codCategoria)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 ?>

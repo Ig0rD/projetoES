@@ -9,14 +9,14 @@
         public function listarItems ($id){
             $catfill = "";
             $con = $this->getConexao();
-            $sql = 'SELECT * FROM "Item" WHERE "codCategoria" = ?';
+            $sql = 'SELECT * FROM "Item" WHERE codcategoria = ?';
             $stm = $con->prepare($sql);
             $stm->bindValue(1, $id);
             $res = $stm->execute();
             $items = array();
             if($res) {
                 while($linha = $stm->fetch(PDO::FETCH_ASSOC)) {
-                    $item = new Item($linha['foto'], $linha['codCategoria'], $linha['precoVenda'], $linha['nome'], $linha['codItem'], $linha['quantidadeDisponivel'], $linha['descricao']);
+                    $item = new Item($linha['foto'], $linha['codcategoria'], $linha['precovenda'], $linha['nome'], $linha['coditem'], $linha['quantidadedisponivel'], $linha['descricao']);
                     array_push($items, $item);
                   }
             }
@@ -24,6 +24,22 @@
             $stm = NULL;
             $con = NULL;
             return $items;
+        }
+        public function buscarItem ($id){
+            $catfill = "";
+            $con = $this->getConexao();
+            $sql = 'SELECT * FROM "Item" WHERE coditem = ?';
+            $stm = $con->prepare($sql);
+            $stm->bindValue(1, $id);
+            $res = $stm->execute();
+            if($res) {
+            $linha = $stm->fetch(PDO::FETCH_ASSOC);
+                $item = new Item($linha['foto'], $linha['codcategoria'], $linha['precovenda'], $linha['nome'], $linha['coditem'], $linha['quantidadedisponivel'], $linha['descricao']);   
+            }
+            $stm->closeCursor();
+            $stm = NULL;
+            $con = NULL;
+            return $item;
         }
     }      
 ?>
