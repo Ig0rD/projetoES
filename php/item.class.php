@@ -8,7 +8,7 @@
         private $quantidadeDisponivel;
         private $descricao;
 
-        function __construct ($foto, $codCategoria, $precoVenda, $nome, $codItem, $quantidadeDisponivel, $descricao){
+        public function __construct ($foto, $codCategoria, $precoVenda, $nome, $codItem, $quantidadeDisponivel, $descricao){
             $this->foto = $foto;
             $this->codCategoria = $codCategoria;
             $this->precoVenda = $precoVenda;
